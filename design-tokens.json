@@ -1,0 +1,172 @@
+{
+  "colors": {
+    "paper": {
+      "background": "#f8f5e6",
+      "notebook": "#f9f6ea",
+      "note": "#fffbe6"
+    },
+    "ink": {
+      "primary": "#4a3e2a",
+      "secondary": "#3a3027",
+      "tertiary": "#8a7b6a",
+      "muted": "#7d5a44"
+    },
+    "notebook": {
+      "binding": "#d4c5a8",
+      "bindingBorder": "#b5a88a",
+      "divider": "#e5dcc5",
+      "underline": "#c9bda1"
+    },
+    "interactive": {
+      "primary": "#9c6644",
+      "primaryHover": "#7d4e32"
+    },
+    "functional": {
+      "danger": "#9e2b25",
+      "dangerHover": "#7d1f1c",
+      "success": "#4a7c59",
+      "successHover": "#3a6347"
+    },
+    "progress": {
+      "track": "#efe9d9",
+      "bar": "#a4c3a2"
+    },
+    "rewards": {
+      "star": "#d4b556",
+      "starBorder": "#b5a88a",
+      "completion": "#f3eed7"
+    }
+  },
+  "typography": {
+    "families": {
+      "header": "\"Courier Prime\", monospace",
+      "body": "\"Indie Flower\", cursive"
+    },
+    "weights": {
+      "regular": 400,
+      "bold": 700
+    },
+    "sizes": {
+      "xs": "0.8rem",
+      "sm": "0.9rem",
+      "base": "1rem",
+      "md": "1.1rem",
+      "lg": "1.25rem",
+      "xl": "1.5rem",
+      "2xl": "1.875rem",
+      "3xl": "2.25rem",
+      "4xl": "3rem"
+    },
+    "letterSpacing": {
+      "tight": "-0.025em",
+      "normal": "0",
+      "wide": "0.025em",
+      "wider": "0.05em",
+      "widest": "0.1em",
+      "header": "3px",
+      "subtitle": "1px"
+    },
+    "transforms": {
+      "uppercase": "uppercase",
+      "lowercase": "lowercase",
+      "capitalize": "capitalize",
+      "normal": "none"
+    }
+  },
+  "spacing": {
+    "0": "0",
+    "px": "1px",
+    "0.5": "0.125rem",
+    "1": "0.25rem",
+    "1.5": "0.375rem",
+    "2": "0.5rem",
+    "3": "0.75rem",
+    "4": "1rem",
+    "5": "1.25rem",
+    "6": "1.5rem",
+    "8": "2rem",
+    "10": "2.5rem",
+    "12": "3rem",
+    "16": "4rem",
+    "20": "5rem",
+    "24": "6rem",
+    "32": "8rem"
+  },
+  "borders": {
+    "width": {
+      "default": "1px",
+      "0": "0",
+      "2": "2px",
+      "4": "4px",
+      "8": "8px"
+    },
+    "radius": {
+      "none": "0",
+      "sm": "2px",
+      "default": "4px",
+      "md": "6px",
+      "lg": "8px",
+      "full": "9999px"
+    },
+    "style": {
+      "solid": "solid",
+      "dashed": "dashed",
+      "dotted": "dotted",
+      "double": "double",
+      "none": "none"
+    }
+  },
+  "shadows": {
+    "sm": "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
+    "default": "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)",
+    "md": "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
+    "lg": "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
+    "xl": "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+    "2xl": "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+    "inner": "inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)",
+    "none": "none"
+  },
+  "effects": {
+    "textures": {
+      "paper": "url(\"https://www.transparenttextures.com/patterns/paper.png\")",
+      "oldPaper": "url(\"https://www.transparenttextures.com/patterns/old-paper.png\")",
+      "notebook": "url(\"https://www.transparenttextures.com/patterns/notebook.png\")",
+      "notebookDark": "url(\"https://www.transparenttextures.com/patterns/notebook-dark.png\")"
+    },
+    "transforms": {
+      "rotateNegative": "rotate(-1deg)",
+      "rotatePositive": "rotate(1deg)",
+      "rotateSmall": "rotate(2deg)"
+    },
+    "textShadow": {
+      "header": "1px 1px 0 #d4c5a8, 2px 2px 0 #b5a88a"
+    }
+  },
+  "animations": {
+    "fadeInOut": {
+      "keyframes": {
+        "0%": {
+          "opacity": "0",
+          "transform": "scale(0.5) translateY(-50%)"
+        },
+        "50%": {
+          "opacity": "0.7",
+          "transform": "scale(1.2) translateY(-50%)"
+        },
+        "100%": {
+          "opacity": "0",
+          "transform": "scale(1) translateY(-50%)"
+        }
+      },
+      "duration": "1s",
+      "timingFunction": "ease-in-out"
+    },
+    "transitions": {
+      "colors": "color 0.2s ease-in-out",
+      "opacity": "opacity 0.3s ease-in-out",
+      "transform": "transform 0.3s ease-in-out",
+      "width": "width 0.5s ease-in-out",
+      "background": "background-color 0.5s ease-in-out"
+    }
+  }
+}

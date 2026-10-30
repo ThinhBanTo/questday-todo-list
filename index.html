@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>QuestDay Todo List</title>
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Indie+Flower&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Retro Hand-drawn SVG Icon Sprite -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;" aria-hidden="true">
+      <symbol id="icon-flame" viewBox="0 0 24 24">
+        <path d="M12 2c.5 3.5 2.5 5 4 7 1.5 2 2 4.5 2 6.5a6 6 0 1 1-12 0c0-3 2-5.5 3.5-7.5 1.2 1 2 2 2 3.5 0-3 1.5-6.5.5-9z"/>
+      </symbol>
+      <symbol id="icon-trophy" viewBox="0 0 24 24">
+        <path d="M6 3h12v5a6 6 0 0 1-12 0V3z"/>
+        <path d="M6 5H3.5a1.5 1.5 0 0 0-1.5 1.5v.5a3.5 3.5 0 0 0 3.5 3.5H6"/>
+        <path d="M18 5h2.5a1.5 1.5 0 0 1 1.5 1.5v.5a3.5 3.5 0 0 1-3.5 3.5H18"/>
+        <line x1="12" y1="14" x2="12" y2="18"/>
+        <line x1="8" y1="18" x2="16" y2="18"/>
+        <line x1="7" y1="21" x2="17" y2="21"/>
+      </symbol>
+      <symbol id="icon-check-circle" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="9"/>
+        <path d="m8.5 12 2.5 2.5 5-5"/>
+      </symbol>
+      <symbol id="icon-calendar" viewBox="0 0 24 24">
+        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+        <line x1="16" y1="2" x2="16" y2="6"/>
+        <line x1="8" y1="2" x2="8" y2="6"/>
+        <line x1="3" y1="10" x2="21" y2="10"/>
+      </symbol>
+      <symbol id="icon-clock" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="9"/>
+        <polyline points="12 7 12 12 15.5 14"/>
+      </symbol>
+      <symbol id="icon-plus" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="9"/>
+        <line x1="12" y1="8" x2="12" y2="16"/>
+        <line x1="8" y1="12" x2="16" y2="12"/>
+      </symbol>
+      <symbol id="icon-check" viewBox="0 0 24 24">
+        <polyline points="20 6 9 17 4 12"/>
+      </symbol>
+      <symbol id="icon-trash" viewBox="0 0 24 24">
+        <path d="M4 7h16"/>
+        <path d="M10 11v6"/>
+        <path d="M14 11v6"/>
+        <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2l1-12"/>
+        <path d="M9 7V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3"/>
+      </symbol>
+      <symbol id="icon-star" viewBox="0 0 24 24">
+        <path d="M12 17.3l-6.18 3.25 1.18-6.88L2 8.97l6.91-1L12 1.7l3.09 6.27 6.91 1-5 4.7 1.18 6.88z"/>
+      </symbol>
+      <symbol id="icon-archive" viewBox="0 0 24 24">
+        <polyline points="21 8 21 21 3 21 3 8"/>
+        <rect x="1" y="3" width="22" height="5"/>
+        <line x1="10" y1="12" x2="14" y2="12"/>
+      </symbol>
+      <symbol id="icon-repeat" viewBox="0 0 24 24">
+        <path d="m17 2 4 4-4 4"/>
+        <path d="M3 11v-1a4 4 0 0 1 4-4h14"/>
+        <path d="m7 22-4-4 4-4"/>
+        <path d="M21 13v1a4 4 0 0 1-4 4H3"/>
+      </symbol>
+      <symbol id="icon-repeat-off" viewBox="0 0 24 24">
+        <path d="m17 2 4 4-4 4"/>
+        <path d="M3 11v-1a4 4 0 0 1 4-4h4"/>
+        <path d="m7 22-4-4 4-4"/>
+        <path d="M21 13v1a4 4 0 0 1-4 4H11"/>
+        <line x1="2" y1="2" x2="22" y2="22"/>
+      </symbol>
+      <symbol id="icon-download" viewBox="0 0 24 24">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+        <polyline points="7 10 12 15 17 10"/>
+        <line x1="12" y1="15" x2="12" y2="3"/>
+      </symbol>
+      <symbol id="icon-upload" viewBox="0 0 24 24">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+        <polyline points="17 8 12 3 7 8"/>
+        <line x1="12" y1="3" x2="12" y2="15"/>
+      </symbol>
+    </svg>
+
+    <main class="app-wrapper">
+      <section class="quest-app" aria-label="QuestDay Todo List">
+        <div class="binding" aria-hidden="true">
+          <!-- spiral holes -->
+          <span></span><span></span><span></span><span></span><span></span> <span></span
+          ><span></span><span></span><span></span><span></span><span></span> <span></span
+          ><span></span><span></span><span></span>
+        </div>
+        <header class="app-header">
+          <h1 class="title">QUESTDAY TODO LIST</h1>
+          <div class="subtitle-ribbon">Turn daily tasks into quests.</div>
+        </header>
+
+        <section class="xp-section" aria-label="Progress">
+          <div class="xp-labels">
+            <span>PROGRESS</span>
+            <span class="xp-value" id="xpValue">Lv 1 • 0/100 XP</span>
+          </div>
+          <div class="xp-bar" aria-hidden="false" aria-label="XP Progress">
+            <div class="xp-bar-track">
+              <div class="xp-bar-fill" id="xpFill"></div>
+              <div class="xp-ticks" aria-hidden="true">
+                <span></span><span></span><span></span><span></span>
+              </div>
+            </div>
+          </div>
+          <div class="xp-sub-labels">
+            <span class="xp-remaining" id="xpRemaining">100 XP to Level 2</span>
+          </div>
+        </section>
+
+        <!-- Daily Streak Component -->
+        <section class="streak-section" aria-label="Daily Streak">
+          <div class="streak-card">
+            <div class="streak-item" title="Consecutive days with completed quests">
+              <span class="streak-icon" aria-hidden="true">
+                <svg class="retro-icon"><use href="#icon-flame" xlink:href="#icon-flame"></use></svg>
+              </span>
+              <div class="streak-info">
+                <span class="streak-label">STREAK</span>
+                <span class="streak-count" id="currentStreak">0 days</span>
+              </div>
+            </div>
+            <div class="streak-divider" aria-hidden="true"></div>
+            <div class="streak-item" title="Best streak achieved">
+              <span class="streak-icon" aria-hidden="true">
+                <svg class="retro-icon"><use href="#icon-trophy" xlink:href="#icon-trophy"></use></svg>
+              </span>
+              <div class="streak-info">
+                <span class="streak-label">BEST</span>
+                <span class="streak-count" id="bestStreak">0 days</span>
+              </div>
+            </div>
+            <div class="streak-divider" aria-hidden="true"></div>
+            <div class="streak-item" title="Quests completed today">
+              <span class="streak-icon" aria-hidden="true">
+                <svg class="retro-icon"><use href="#icon-check-circle" xlink:href="#icon-check-circle"></use></svg>
+              </span>
+              <div class="streak-info">
+                <span class="streak-label">TODAY</span>
+                <span class="streak-count" id="todayCompletedCount">0 done</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="new-quest" aria-label="Add a new quest">
+          <form id="questForm" autocomplete="off">
+            <div class="input-wrapper">
+              <div class="input-main-row">
+                <input
+                  id="questInput"
+                  class="quest-input"
+                  type="text"
+                  placeholder="write a new task..."
+                  aria-label="Quest description"
+                />
+                <button
+                  type="submit"
+                  class="icon-btn add-btn"
+                  title="Add quest (+5 XP)"
+                  aria-label="Add quest"
+                >
+                  <svg class="retro-icon add-icon" aria-hidden="true"><use href="#icon-plus" xlink:href="#icon-plus"></use></svg>
+                </button>
+              </div>
+              <div class="form-date-row">
+                <label class="date-chip" title="Planned execution date">
+                  <span class="chip-label">
+                    <svg class="retro-icon chip-icon" aria-hidden="true"><use href="#icon-calendar" xlink:href="#icon-calendar"></use></svg>Plan:
+                  </span>
+                  <input id="plannedInput" type="date" class="chip-date-input" aria-label="Planned date" />
+                </label>
+                <label class="date-chip" title="Optional deadline">
+                  <span class="chip-label">
+                    <svg class="retro-icon chip-icon" aria-hidden="true"><use href="#icon-clock" xlink:href="#icon-clock"></use></svg>Due:
+                  </span>
+                  <input id="dueInput" type="date" class="chip-date-input" aria-label="Due date (optional)" />
+                </label>
+                <label class="date-chip repeat-chip" title="Recurrence cycle">
+                  <span class="chip-label">
+                    <svg class="retro-icon chip-icon" aria-hidden="true"><use href="#icon-repeat" xlink:href="#icon-repeat"></use></svg>Repeat:
+                  </span>
+                  <select id="repeatSelect" class="chip-select" aria-label="Recurrence cycle">
+                    <option value="none">None</option>
+                    <option value="daily">Daily</option>
+                    <option value="weekly">Weekly</option>
+                  </select>
+                </label>
+                <button type="button" id="clearDatesBtn" class="clear-dates-btn" title="Clear dates and recurrence" aria-label="Clear dates and recurrence">Clear</button>
+              </div>
+            </div>
+          </form>
+        </section>
+
+        <section class="list-section" aria-label="Active quests">
+          <h2 class="list-title">ACTIVE QUESTS</h2>
+          <nav class="filter-tabs" aria-label="Quest filters">
+            <button type="button" class="tab-btn active" data-filter="today">
+              Today <span class="tab-badge" id="badgeToday">0</span>
+            </button>
+            <button type="button" class="tab-btn" data-filter="upcoming">
+              Upcoming <span class="tab-badge" id="badgeUpcoming">0</span>
+            </button>
+            <button type="button" class="tab-btn" data-filter="overdue">
+              Overdue <span class="tab-badge" id="badgeOverdue">0</span>
+            </button>
+            <button type="button" class="tab-btn" data-filter="all">
+              All <span class="tab-badge" id="badgeAll">0</span>
+            </button>
+            <button type="button" class="tab-btn" data-filter="history">
+              History <span class="tab-badge" id="badgeHistory">0</span>
+            </button>
+          </nav>
+          <ul id="questList" class="quest-list" aria-live="polite"></ul>
+        </section>
+
+        <section class="backup-section" aria-label="Data Backup and Restore">
+          <div class="backup-actions">
+            <button type="button" id="exportBackupBtn" class="retro-btn backup-btn" title="Export all quest data to JSON backup file">
+              <svg class="retro-icon" aria-hidden="true"><use href="#icon-download"/></svg>
+              <span>Export Backup</span>
+            </button>
+            <button type="button" id="importBackupTriggerBtn" class="retro-btn backup-btn" title="Restore quest data from JSON backup file">
+              <svg class="retro-icon" aria-hidden="true"><use href="#icon-upload"/></svg>
+              <span>Restore Backup</span>
+            </button>
+            <input type="file" id="importFileInput" accept=".json,application/json" style="display:none;" />
+          </div>
+          <div id="backupFeedback" class="backup-feedback" aria-live="polite"></div>
+        </section>
+      </section>
+    </main>
+    <template id="questItemTemplate">
+      <li class="quest-item" data-id="">
+        <div class="item-main">
+          <button class="checkbox" aria-label="Toggle complete" title="Complete">
+            <svg class="retro-icon check-icon" aria-hidden="true"><use href="#icon-check" xlink:href="#icon-check"></use></svg>
+          </button>
+          <div class="text-block">
+            <p class="quest-text"></p>
+            <div class="quest-meta"></div>
+          </div>
+          <button
+            type="button"
+            class="icon-btn stop-repeat-btn"
+            aria-label="Stop repeating quest"
+            title="Stop repeating (cancel future recurrence)"
+            style="display: none;"
+          >
+            <svg class="retro-icon" aria-hidden="true"><use href="#icon-repeat-off" xlink:href="#icon-repeat-off"></use></svg>
+          </button>
+          <button
+            type="button"
+            class="icon-btn reschedule-btn"
+            aria-label="Reschedule quest"
+            title="Schedule / Change dates"
+          >
+            <svg class="retro-icon" aria-hidden="true"><use href="#icon-calendar" xlink:href="#icon-calendar"></use></svg>
+          </button>
+          <button
+            type="button"
+            class="star-btn"
+            aria-label="Mark important"
+            title="Mark important"
+            data-favorite="false"
+          >
+            <svg class="retro-icon star-icon" aria-hidden="true"><use href="#icon-star" xlink:href="#icon-star"></use></svg>
+          </button>
+          <button type="button" class="delete-btn" aria-label="Delete quest" title="Delete quest">
+            <svg class="retro-icon trash-icon" aria-hidden="true"><use href="#icon-trash" xlink:href="#icon-trash"></use></svg>
+          </button>
+        </div>
+        <div class="date-editor-container"></div>
+        <div class="flash" aria-hidden="true"></div>
+      </li>
+    </template>
+
+    <!-- Retro Modal Backdrop & Dialog for Restore Confirmation -->
+    <div id="restoreModal" class="retro-modal-backdrop" aria-hidden="true">
+      <div class="retro-modal-card" role="dialog" aria-modal="true" aria-labelledby="restoreModalTitle">
+        <div class="modal-header">
+          <svg class="retro-icon modal-header-icon" aria-hidden="true"><use href="#icon-archive"/></svg>
+          <h3 id="restoreModalTitle" class="modal-title">Restore Quest Data</h3>
+        </div>
+        <div class="modal-body">
+          <p class="modal-desc">Review the backup file details before restoring. <strong>Restoring will replace all current quests, history, XP, and recurrence rules.</strong></p>
+          <div class="backup-summary-box" id="restoreSummaryBox"></div>
+          <div class="modal-backup-recommendation">
+            <button type="button" id="safetyBackupBtn" class="retro-btn safety-btn" title="Download current data before replacing">
+              <svg class="retro-icon" aria-hidden="true"><use href="#icon-download"/></svg>
+              <span>Save Current Data First</span>
+            </button>
+          </div>
+        </div>
+        <div class="modal-actions">
+          <button type="button" id="cancelRestoreBtn" class="retro-btn modal-cancel-btn">Cancel</button>
+          <button type="button" id="confirmRestoreBtn" class="retro-btn modal-confirm-btn">Confirm Replace</button>
+        </div>
+      </div>
+    </div>
+
+    <footer class="app-footer" aria-label="Attribution">
+      <small>Coded with ☕ by <strong>ThinhBanTo</strong> • <strong>QuestDay Todo List</strong></small>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
