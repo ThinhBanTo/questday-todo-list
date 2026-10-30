@@ -139,7 +139,7 @@ questday-todo-list/
 
 Dự án được xây dựng với mục tiêu phục vụ học tập chuyên sâu kỹ thuật Frontend theo triết lý **User-Interaction-First Execution Flow** (phân tích từ thao tác người dùng → DOM Event → Handler → State → Storage → Render → Debug).
 
-👉 **Xem danh mục đầy đủ các luồng tại: [docs/USER-FLOWS.md](docs/USER-FLOWS.md)**
+**Xem danh mục đầy đủ các luồng tại: [docs/USER-FLOWS.md](docs/USER-FLOWS.md)**
 
 Các nhóm tài liệu chính:
 - **[F00: Khởi tạo ứng dụng & Nạp dữ liệu](docs/flows/00-app-startup.md)**
@@ -151,28 +151,3 @@ Các nhóm tài liệu chính:
 - **[F18 - F19: Sao lưu & Khôi phục dữ liệu JSON](docs/flows/06-data-backup.md)**
 
 ---
-
-## 9. Hướng dẫn Deploy lên GitHub Pages
-
-Ứng dụng hoàn toàn tương thích với GitHub Pages ở cả thư mục gốc hoặc subpath:
-
-1. Đưa mã nguồn lên repository GitHub của bạn trên nhánh `main`.
-2. Truy cập vào mục **Settings** của repository trên GitHub.
-3. Điều hướng tới mục **Pages** (tại thanh menu bên trái).
-4. Tại mục **Build and deployment**:
-   - **Source:** Chọn `Deploy from a branch`.
-   - **Branch:** Chọn nhánh `main` và thư mục `/ (root)`.
-   - Nhấn **Save**.
-5. Chờ 1–2 phút để GitHub Actions hoàn tất việc xuất bản. Trang web sẽ sẵn sàng tại địa chỉ:  
-   `https://<username>.github.io/<tên-repository>/`
-
-> [!NOTE]
-> Repository này không đặt sẵn tên miền riêng. Nếu sau này sử dụng custom domain, hãy cấu hình tên miền trong GitHub Pages và thêm `CNAME` tương ứng với tên miền **của bạn**.
-
----
-
-## 10. Bản quyền & Ghi công (License & Attribution)
-
-**QuestDay Todo List** là dự án cá nhân được mở rộng từ mã nguồn [Quest Log của Ankankun](https://github.com/Ankankun/Quest-Log) (MIT). Các phần bổ sung gồm quản lý kế hoạch theo ngày, nhiệm vụ lặp, History, Streak và Backup/Restore.
-
-Giữ thông báo bản quyền nguồn gốc **© 2025 Ankankun** theo [MIT License](LICENSE).
